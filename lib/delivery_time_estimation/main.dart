@@ -14,6 +14,7 @@ import 'package:command_line_app/delivery_cost_calculator/cla_package_info_reade
 /// time for every package by
 /// maximizing no. of packages in
 /// every shipment.]
+/// With the help of 0/1 Knapsack problem we can solve this [ Ref : https://www.geeksforgeeks.org/0-1-knapsack-problem-dp-10/ ]
 void main(List<String> arguments) {
   /// : Get argument from configuration
   ArgumentParser argumentParser = CommandLineArgumentParser();
