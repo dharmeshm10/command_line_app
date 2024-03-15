@@ -1,4 +1,4 @@
-import 'package:command_line_app/delivery_cost_calculator/cla_constant.dart';
+import 'package:command_line_app/delivery_cost_calculator/constant.dart';
 import 'package:command_line_app/delivery_cost_calculator/discount_calculator/discount_calculator.dart';
 
 class SimpleDiscountCalculator implements DiscountCalculator {

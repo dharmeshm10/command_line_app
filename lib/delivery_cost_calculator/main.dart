@@ -1,5 +1,6 @@
-import 'package:command_line_app/delivery_cost_calculator/cla_argument_parser.dart';
-import 'package:command_line_app/delivery_cost_calculator/cla_constant.dart';
+import 'package:command_line_app/delivery_cost_calculator/argument_parser/argument_parser.dart';
+import 'package:command_line_app/delivery_cost_calculator/argument_parser/command_line_argument_parser.dart';
+import 'package:command_line_app/delivery_cost_calculator/constant.dart';
 import 'package:command_line_app/delivery_cost_calculator/cla_delivery_cost_calculator.dart';
 import 'package:command_line_app/delivery_cost_calculator/cla_delivery_cost_processor.dart';
 import 'package:command_line_app/delivery_cost_calculator/discount_calculator/discount_calculator.dart';
@@ -8,7 +9,7 @@ import 'package:command_line_app/delivery_cost_calculator/discount_calculator/di
 import 'package:command_line_app/delivery_cost_calculator/discount_calculator/simple_discount_calculator.dart';
 
 void main(List<String> arguments) {
-  /// : Get argument from configuration
+  /// Get argument from configuration
   ArgumentParser argumentParser = CommandLineArgumentParser();
   argumentParser.parseArguments(arguments);
 
@@ -20,7 +21,7 @@ void main(List<String> arguments) {
   print("set numberOfPackages:: $numberOfPackages");
   print("-=-=-=-= End Arguments -=-=-=-=\n");
 
-  ///  set discount as per given table
+  ///  Set discount as per given table
   DiscountCalculator discountCalculator = SimpleDiscountCalculator(
     discountTable: discountTable,
   );
