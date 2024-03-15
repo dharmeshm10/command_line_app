@@ -4,7 +4,7 @@ import 'package:command_line_app/delivery_cost_calculator/constant.dart';
 import 'package:command_line_app/delivery_cost_calculator/delivery_cost/delivery_cost.dart';
 import 'package:command_line_app/delivery_cost_calculator/delivery_cost/delivery_cost_processor.dart';
 import 'package:command_line_app/delivery_cost_calculator/discount_calculator/discount_calculator.dart';
-import 'package:command_line_app/delivery_cost_calculator/info_reader_and_printer/package_info_reader.dart';
+import 'package:command_line_app/info_reader_and_printer/package_info_reader.dart';
 import 'package:command_line_app/delivery_cost_calculator/discount_calculator/discount_validation.dart';
 import 'package:command_line_app/delivery_cost_calculator/discount_calculator/simple_discount_calculator.dart';
 

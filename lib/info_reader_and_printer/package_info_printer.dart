@@ -66,4 +66,16 @@ class PackagePrinter {
     print("Total Cost of pkgId==>$pkgId :: $totalCost");
     print('-=-=-=-=-=-=-=-=-=-=-=-=-=-=');
   }
+
+  /// Print inputted value
+  void printEstimateTimeInfo({
+    required String packageId,
+    required String totalCost,
+    required String estimatedDeliveryTime,
+  }) {
+    print("packageId :: $packageId");
+    // print("totalCost :: $totalCost");
+    print("estimatedDeliveryTime :: $estimatedDeliveryTime");
+    print('-=-=-=-=-=-=-=-=-=-=-=-=-=-=');
+  }
 }
