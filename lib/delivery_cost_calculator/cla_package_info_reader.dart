@@ -13,15 +13,15 @@ class PackageInfoReader {
       throw const FormatException('Invalid input');
     }
 
-    List<String> packageInfo = input.split(' ');
-    if (packageInfo.length < 4) {
+    List<String> fetchingVehicleInfo = input.split(' ');
+    if (fetchingVehicleInfo.length < 4) {
       throw const FormatException('Invalid input');
     }
 
-    String pkgId = packageInfo[0];
-    double pkgWeight = double.parse(packageInfo[1]);
-    double distance = double.parse(packageInfo[2]);
-    String offerCode = packageInfo[3];
+    String pkgId = fetchingVehicleInfo[0];
+    double pkgWeight = double.parse(fetchingVehicleInfo[1]);
+    double distance = double.parse(fetchingVehicleInfo[2]);
+    String offerCode = fetchingVehicleInfo[3];
 
     if (pkgWeight < 0 || distance < 0) {
       throw ArgumentError('Package weight and distance must be non-negative');

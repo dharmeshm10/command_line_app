@@ -7,19 +7,18 @@ class DeliveryCostProcessor {
   final PackageInfoReader packageInfoReader;
   final DiscountValidation discountApplier;
   final DeliveryCostCalculator deliveryCostCalculator;
-  final PackagePrinter outputPrinter;
 
   DeliveryCostProcessor({
     required this.packageInfoReader,
     required this.discountApplier,
     required this.deliveryCostCalculator,
-    required this.outputPrinter,
   });
 
   void processDeliveryCost({
     required int numberOfPackages,
     required double baseDeliveryCost,
   }) {
+    final outputPrinter = PackagePrinter();
     for (int packageCount = 0;
         packageCount < numberOfPackages;
         packageCount++) {
@@ -74,6 +73,7 @@ class DeliveryCostProcessor {
     required double baseDeliveryCost,
   }) {
     int packageCount = 0;
+    final outputPrinter = PackagePrinter();
     for (packageCount; packageCount < numberOfPackages; packageCount++) {
       final packageInfo = packageInfoReader.readPackageInfoForEstimateTime(
         packageNumber: packageCount + 1,

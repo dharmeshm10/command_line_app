@@ -4,7 +4,6 @@ import 'package:command_line_app/delivery_cost_calculator/cla_delivery_cost_calc
 import 'package:command_line_app/delivery_cost_calculator/cla_delivery_cost_processor.dart';
 import 'package:command_line_app/delivery_cost_calculator/cla_discount_calculator.dart';
 import 'package:command_line_app/delivery_cost_calculator/cla_discount_validation.dart';
-import 'package:command_line_app/delivery_cost_calculator/cla_package_info_printer.dart';
 import 'package:command_line_app/delivery_cost_calculator/cla_package_info_reader.dart';
 
 void main(List<String> arguments) {
@@ -38,14 +37,12 @@ void main(List<String> arguments) {
   );
 
   final deliveryCostCalculator = DeliveryCostCalculator();
-  final outputPrinter = PackagePrinter();
 
   /// Get delivery cost as per inputted value
   final deliveryCostProcessor = DeliveryCostProcessor(
     packageInfoReader: packageInfoReader,
     discountApplier: discountApplier,
     deliveryCostCalculator: deliveryCostCalculator,
-    outputPrinter: outputPrinter,
   );
 
   deliveryCostProcessor.processDeliveryCost(
