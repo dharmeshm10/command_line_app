@@ -74,7 +74,7 @@ class PackagePrinter {
     required String estimatedDeliveryTime,
   }) {
     print("packageId :: $packageId");
-    // print("totalCost :: $totalCost");
+    print("totalCost :: $totalCost");
     print("estimatedDeliveryTime :: $estimatedDeliveryTime");
     print('-=-=-=-=-=-=-=-=-=-=-=-=-=-=');
   }
