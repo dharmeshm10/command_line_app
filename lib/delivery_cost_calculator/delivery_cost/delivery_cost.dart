@@ -1,4 +1,4 @@
-class DeliveryCostCalculator {
+class DeliveryCost {
   double calculateDeliveryCost({
     required double? baseDeliveryCost,
     required double? pkgWeight,

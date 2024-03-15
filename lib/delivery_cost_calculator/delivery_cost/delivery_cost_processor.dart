@@ -1,12 +1,12 @@
-import 'package:command_line_app/delivery_cost_calculator/cla_delivery_cost_calculator.dart';
 import 'package:command_line_app/delivery_cost_calculator/cla_package_info_printer.dart';
 import 'package:command_line_app/delivery_cost_calculator/cla_package_info_reader.dart';
+import 'package:command_line_app/delivery_cost_calculator/delivery_cost/delivery_cost.dart';
 import 'package:command_line_app/delivery_cost_calculator/discount_calculator/discount_validation.dart';
 
 class DeliveryCostProcessor {
   final PackageInfoReader packageInfoReader;
   final DiscountValidation discountApplier;
-  final DeliveryCostCalculator deliveryCostCalculator;
+  final DeliveryCost deliveryCostCalculator;
 
   DeliveryCostProcessor({
     required this.packageInfoReader,
