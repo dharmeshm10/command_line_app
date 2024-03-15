@@ -1,19 +1,15 @@
 class PackagePrinter {
   /// Print inputted value
-  void printPackageDetails({
+  void printDeliveryCostEstimation({
     required String pkgId,
     required double pkgWeight,
     required double distance,
     required String offerCode,
   }) {
-    print('\n-=-=-=-=-=-=-=-=-=-=-=-=-=-=');
+    print("\n-===-=-=-= INPUT -===-=-=-=");
     print("Inputted Weight :: $pkgWeight kg");
     print("Inputted Distance :: $distance km");
-
-    //TODO:(Dharmesh) make offer optional WIP
-    if (offerCode.isNotEmpty) {
-      print("Inputted offerCode :: ${offerCode.toUpperCase()}");
-    }
+    print("Inputted offerCode :: ${offerCode.toUpperCase()}");
     print('-=-=-=-=-=-=-=-=-=-=-=-=-=-=');
   }
 
@@ -41,18 +37,18 @@ class PackagePrinter {
     required double maxSpeed,
     required double maxCarriableWeight,
   }) {
-    print('\n-=-=-=-=-=-=-=-=-=-=-=-=-=-=');
-    print("Inputted noOfVehicles :: $noOfVehicles");
-    print("Inputted maxSpeed :: $maxSpeed");
-    print("Inputted maxCarriableWeight :: $maxCarriableWeight");
+    print("\n\n-===-=-=-= INPUT -===-=-=-=");
+    print("NoOfVehicles :: $noOfVehicles");
+    print("MaxSpeed :: $maxSpeed");
+    print("MaxCarriableWeight :: $maxCarriableWeight");
     print('-=-=-=-=-=-=-=-=-=-=-=-=-=-=');
   }
 
   void printDeliveryCost({
     required double totalCost,
   }) {
+    print("\n\n-===-=-=-= OUTPUT -===-=-=-=");
     print("Delivery Cost :: $totalCost");
-    print('-=-=-=-=-=-=-=-=-=-=-=-=-=-=');
   }
 
   void printDiscount({
@@ -61,7 +57,6 @@ class PackagePrinter {
   }) {
     print(
         "${discount * 100} % Discount on Delivery cost :: ${discount > 0 ? "-${totalCost * discount}" : "$discount"}");
-    print('-=-=-=-=-=-=-=-=-=-=-=-=-=-=');
   }
 
   void printTotalCost({

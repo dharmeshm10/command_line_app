@@ -1,5 +1,5 @@
-import 'package:command_line_app/delivery_cost_calculator/cla_package_info_printer.dart';
-import 'package:command_line_app/delivery_cost_calculator/cla_package_info_reader.dart';
+import 'package:command_line_app/delivery_cost_calculator/info_reader_and_printer/package_info_printer.dart';
+import 'package:command_line_app/delivery_cost_calculator/info_reader_and_printer/package_info_reader.dart';
 import 'package:command_line_app/delivery_cost_calculator/delivery_cost/delivery_cost.dart';
 import 'package:command_line_app/delivery_cost_calculator/discount_calculator/discount_validation.dart';
 
@@ -37,7 +37,7 @@ class DeliveryCostProcessor {
         pkgWeight,
       );
 
-      outputPrinter.printPackageDetails(
+      outputPrinter.printDeliveryCostEstimation(
         pkgId: pkgId,
         distance: distance,
         pkgWeight: pkgWeight,

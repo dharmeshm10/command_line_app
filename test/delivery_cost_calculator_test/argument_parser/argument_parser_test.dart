@@ -1,79 +1,55 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/mockito.dart';
-
 import '__mock__/mock_argument_parser.dart';
 
 void main() {
-  group('Argument Parsing', () {
-    test('Less than 2 arguments', () {
-      // Arrange
-      var arguments = <String>[];
-      var mockParser = MockArgumentParser();
-
-      // Act
-      when(mockParser.parseArguments(arguments)).thenAnswer((_) {
-        throw Exception('Example exception'); // Or simply throw an exception
-      });
-
-      // Assert
-      expect(() => mockParser.parseArguments(arguments),
-          throwsA(const TypeMatcher<Exception>()));
-    });
-    test('Exact 2 arguments', () {
+  group('CommandLineArgumentParser', () {
+    test('Valid arguments', () {
       // Arrange
       var arguments = ['100', '3'];
-      var mockParser = MockArgumentParser();
-
-      // Act
-      mockParser.parseArguments(arguments);
-
-      // Assert
-      expect(
-          () => mockParser.parseArguments(arguments), isNot(throwsA(anything)));
-    });
-    test('More than 2 arguments', () {
-      // Arrange
-      var arguments = ['100', '3', 'extra'];
-      var mockParser = MockArgumentParser();
+      var parser = CommandLineArgumentParser();
 
       // Act & Assert
-      expect(
-          () => mockParser.parseArguments(arguments), isNot(throwsA(anything)));
+      expect(() => parser.parseArguments(arguments), returnsNormally);
     });
-  });
-  group('Argument Parsing for negative number', () {
-    test('Negative no_of_packages', () {
+
+    test('Missing arguments', () {
       // Arrange
-      var arguments = ['100', '-3'];
-      var mockParser = MockParser();
+      var arguments = <String>[];
+      var parser = CommandLineArgumentParser();
 
       // Act & Assert
-      expect(
-          () => mockParser.parseArguments(arguments),
-          prints(
-              '\nInvalid input: base_delivery_cost and no_of_packages must be non-negative numbers.'));
+      expect(() => parser.parseArguments(arguments),
+          throwsA(isA<FormatException>()));
     });
-    test('Negative no of base_delivery_cost', () {
+
+    test('Negative base delivery cost', () {
       // Arrange
       var arguments = ['-100', '3'];
-      var mockParser = MockParser();
+      var parser = CommandLineArgumentParser();
 
       // Act & Assert
-      expect(
-          () => mockParser.parseArguments(arguments),
-          prints(
-              '\nInvalid input: base_delivery_cost and no_of_packages must be non-negative numbers.'));
+      expect(() => parser.parseArguments(arguments),
+          throwsA(isA<FormatException>()));
     });
-    test('Negative no of base_delivery_cost && no_of_packages', () {
+
+    test('Negative number of packages', () {
+      // Arrange
+      var arguments = ['100', '-3'];
+      var parser = CommandLineArgumentParser();
+
+      // Act & Assert
+      expect(() => parser.parseArguments(arguments),
+          throwsA(isA<FormatException>()));
+    });
+
+    test('Negative base delivery cost and number of packages', () {
       // Arrange
       var arguments = ['-100', '-3'];
-      var mockParser = MockParser();
+      var parser = CommandLineArgumentParser();
 
       // Act & Assert
-      expect(
-          () => mockParser.parseArguments(arguments),
-          prints(
-              '\nInvalid input: base_delivery_cost and no_of_packages must be non-negative numbers.'));
+      expect(() => parser.parseArguments(arguments),
+          throwsA(isA<FormatException>()));
     });
   });
 }
