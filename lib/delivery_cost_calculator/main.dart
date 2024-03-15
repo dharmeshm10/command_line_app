@@ -2,9 +2,10 @@ import 'package:command_line_app/delivery_cost_calculator/cla_argument_parser.da
 import 'package:command_line_app/delivery_cost_calculator/cla_constant.dart';
 import 'package:command_line_app/delivery_cost_calculator/cla_delivery_cost_calculator.dart';
 import 'package:command_line_app/delivery_cost_calculator/cla_delivery_cost_processor.dart';
-import 'package:command_line_app/delivery_cost_calculator/cla_discount_calculator.dart';
-import 'package:command_line_app/delivery_cost_calculator/cla_discount_validation.dart';
+import 'package:command_line_app/delivery_cost_calculator/discount_calculator/discount_calculator.dart';
 import 'package:command_line_app/delivery_cost_calculator/cla_package_info_reader.dart';
+import 'package:command_line_app/delivery_cost_calculator/discount_calculator/discount_validation.dart';
+import 'package:command_line_app/delivery_cost_calculator/discount_calculator/simple_discount_calculator.dart';
 
 void main(List<String> arguments) {
   /// : Get argument from configuration

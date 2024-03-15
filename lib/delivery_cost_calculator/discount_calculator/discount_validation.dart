@@ -1,4 +1,4 @@
-import 'package:command_line_app/delivery_cost_calculator/cla_discount_calculator.dart';
+import 'package:command_line_app/delivery_cost_calculator/discount_calculator/discount_calculator.dart';
 
 class DiscountValidation {
   DiscountCalculator discountCalculator;
@@ -9,7 +9,7 @@ class DiscountValidation {
     required this.appliedDiscounts,
   });
 
-  //TODO:(Dharmesh) Make it Offer Code optional WIP
+  // TODO:(Dharmesh) Make it Offer Code optional WIP
   double applyDiscount(
     String offerCode,
     double distance,

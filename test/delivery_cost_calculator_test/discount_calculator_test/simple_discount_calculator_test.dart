@@ -1,5 +1,5 @@
 import 'package:command_line_app/delivery_cost_calculator/cla_constant.dart';
-import 'package:command_line_app/delivery_cost_calculator/cla_discount_calculator.dart';
+import 'package:command_line_app/delivery_cost_calculator/discount_calculator/simple_discount_calculator.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
